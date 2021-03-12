@@ -89,6 +89,7 @@ public class LandingPage extends Testbase {
 				}while(CFS.returnCount(By.xpath("//span[contains(text(),'"+text+"')]"))==0);
 			}
 			CFS.scrolltoWebElement(By.xpath("//span[contains(text(),'"+text+"')]"));
+			System.out.println("Tweet ID : "+tweet.get("id")+" has been copied at "+user);
 			CFS.takeSnapShot(System.getProperty("user.dir")+"\\src\\main\\java\\Screenshots\\Tweet\\"+user+"\\"+tweet.get("id")+ ".png");
 			String UItweet=CFS.GetTextValue(By.xpath("//section[@aria-labelledby='accessible-list-0']//div[@data-testid='tweet']//span[contains(text(),'"+text+"')]"));
 			String UIcounts=CFS.GetAttributeValue(By.xpath("//section[@aria-labelledby='accessible-list-0']//div[@data-testid='tweet']//span[contains(text(),'"+text+"')]//parent::div//parent::div//following-sibling::div[contains(@aria-label,'replies')]"), "aria-label");

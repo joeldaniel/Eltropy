@@ -44,7 +44,7 @@ public class assignment extends Testbase{
 				then().extract().response();
 		JsonPath js= ReusableMethods.rawToJson(res);
 		   ArrayList<String> id=js.get("id");
-		   //System.out.println(id);
+		   System.out.println("Selected Tweet ID : "+id);
 		   return id;
 				
 	}
@@ -89,6 +89,7 @@ public class assignment extends Testbase{
 			if(!userslist.contains(friends.get(i)))
 				HM.put(friends.get(i),friendsfollowers.get(i));
 		}
+		System.out.println("Top 10 Friends of user : "+user+" is "+sortByValue(HM) );
 		return sortByValue(HM);	   
 	}
 	
@@ -170,6 +171,8 @@ public class assignment extends Testbase{
 		int count=0;
 		for(String user:userslist) {
 			Tb.navigateTo(user);
+			System.out.println("Twitter Handle is : "+user);
+			System.out.println("Twitter Handle URL is : "+ "https://twitter.com/"+user);
 			LP.takeLandingPageScreenshot(System.getProperty("user.dir")+"\\src\\main\\java\\Screenshots\\LandingPage\\"+user+".png");
 			tweets=gettweetsinfo(user);
 			LP.gettweetdetails(user,tweets);
