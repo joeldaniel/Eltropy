@@ -178,8 +178,9 @@ public class assignment extends Testbase{
 			LP.gettweetdetails(user,tweets);
 			friends=getfriendsofUser(user);
 			count=getVerifiedfriendsofUser(user);
-			Tb.tearDown();
+			
 		}
+		Tb.tearDown();
 		
 	}
 
